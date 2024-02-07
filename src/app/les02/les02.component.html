@@ -1,0 +1,137 @@
+<p>les02 works!</p>
+<!-- Структурні директиви *ngIf, *ngFor, *ngSwitch -->
+
+<!-- *ngIf -->
+<!-- <div *ngIf="true">added element</div>
+<div *ngIf="false">removed element</div>
+
+
+<button (click)="changeElement()">change</button>
+<div *ngIf="isAdded">added element</div>
+<div *ngIf="!isAdded">removed element</div>
+
+<hr>
+
+<div class="wrapper">
+    <ng-container *ngIf="isAdded; else elseTemplate">
+        <h1>some title from container</h1>
+    </ng-container>
+</div>
+
+<ng-template #elseTemplate>
+    <h1>some title from template</h1>
+</ng-template> -->
+
+<!-- <button (click)="changeElement()">change</button>
+<div>
+    <main>
+        <section>
+            <ng-container *ngIf="isAdded; then thenTemplate; else elseTemplate"></ng-container>
+        </section>
+    </main>
+</div>
+
+<ng-template #thenTemplate>
+    <h1>Some title from ng-template-1</h1>
+</ng-template>
+<ng-template #elseTemplate>
+    <h1>Some title from ng-template-2</h1>
+</ng-template> -->
+
+<!-- <button (click)="showModal()">show</button>
+<ng-container *ngIf="isOpenModal">
+    <div class="modal-wrapper">
+        <div class="modal-container">
+            <h1>Some text</h1>
+            <button (click)="closeModal()">close</button>
+        </div>
+    </div>
+</ng-container> -->
+
+<!-- *ngFor -->
+<!-- index, first, last, even, odd -->
+<!-- <ul>
+    <li *ngFor="let name of arrNames; index as i">{{ i+1 }}. {{ name }} </li>
+</ul> -->
+<!-- <ul>
+    <li *ngFor="let name of arrNames; index as i; first as isFirst">
+        <span [style.color]="isFirst ? 'red' : 'green'">
+            {{ i+1 }}. {{ name }} 
+        </span>
+    </li>
+</ul> -->
+<!-- <ul>
+    <li *ngFor="let name of arrNames; index as i; last as isLast">
+        <span [style.color]="isLast ? 'red' : 'green'">
+            {{ i+1 }}. {{ name }} 
+        </span>
+    </li>
+</ul> -->
+<!-- <ul>
+    <li *ngFor="let name of arrNames; index as i; odd as isOdd">
+        <span [style.color]="isOdd ? 'red' : 'green'">
+            {{ i }}. {{ name }} 
+        </span>
+    </li>
+</ul> -->
+<!-- <ul>
+    <li *ngFor="let name of arrNames; index as i; even as isEven">
+        <span [style.color]="isEven ? 'blue' : 'green'">
+            {{ i }}. {{ name }} 
+        </span>
+    </li>
+</ul> -->
+
+<!-- *ngSwitch -->
+<!-- <input type="text" [(ngModel)]="person">
+<div [ngSwitch]="person">
+    <p *ngSwitchCase="'Ivan'">
+        Hello Ivan
+    </p>
+    <p *ngSwitchCase="'Petro'">
+        Hello Petro
+    </p>
+    <p *ngSwitchDefault>
+        Hello Guest
+    </p>
+</div> -->
+
+<!-- Атрибутивні ngStyle, ngClass -->
+
+<!-- <p [ngStyle]="{'color': isColor ? 'red' : 'green'}">some test</p>
+<p [ngStyle]="{'font-size.px': isColor ? '20' : '30'}">some test</p>
+<p [ngStyle]="objStyles">some test</p> -->
+
+<!-- <p [ngClass]="'red big'"></p> -->
+<!-- <p [ngClass]="['red' ,'big']"></p> -->
+<!-- <button (click)="changeColor()">change</button>
+<p [ngClass]="{'red': isColor, 'second': false, 'third': 'false'}">some text</p> -->
+
+<!-- <input type="text" [(ngModel)]="newName">
+<input *ngIf="!editStatus" type="button" value="add" (click)="addName()" [disabled]="!newName">
+<input *ngIf="editStatus" type="button" value="update" (click)="updateName()" [disabled]="!newName">
+<div class="wrapper">
+    <div class="block-name" *ngFor="let name of arrNames; index as i">
+        <p> {{i+1}}. {{ name }}</p>
+        <div class="actions">
+            <button (click)="editName(i)">Edit</button>
+            <button (click)="deleteName(i)" [disabled]="editStatus">Delete</button>
+        </div>
+    </div>
+    <ng-container *ngIf="arrNames.length === 0">
+        <div class="block-empty">Not found names</div>
+    </ng-container>
+</div> -->
+
+<div class="wrapper">
+    <div class="block-name" *ngFor="let user of userData; index as i">
+        <p> {{i+1}}. {{ user.name }}</p>
+        <div class="actions">
+            <button (click)="editName(i)">Edit</button>
+            <button (click)="deleteName(i)" [disabled]="editStatus">Delete</button>
+        </div>
+    </div>
+    <ng-container *ngIf="arrNames.length === 0">
+        <div class="block-empty">Not found names</div>
+    </ng-container>
+</div>
