@@ -1,0 +1,82 @@
+<ng-container *ngIf="showTemplate1; else showAddPhoneTemplate">
+</ng-container>
+
+<div class="content">
+    <h2>My phone book</h2>
+    <hr>
+    <div class="searchAddArea">
+        <input type="text" placeholder="search text goes here" class="input" [(ngModel)]="field">
+        <button type="button" class="btn addBtn" (click)="toggleTemplates()">add phone</button>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th (click)="changeSort('firstName')">
+                    first name
+                    <span *ngIf="sortState.column === 'firstName'">
+                        <button (click)="changeSortOrder()" class="noborder"> {{ sortState.type === 'asc' ? '🔺' : '🔻'
+                            }}</button>
+                    </span>
+                </th>
+                <th (click)="changeSort('lastName')">
+                    last name
+                    <span *ngIf="sortState.column === 'lastName'">
+                        <button (click)="changeSortOrder()" class="noborder"> {{ sortState.type === 'asc' ? '🔺' : '🔻'
+                            }}</button>
+                    </span>
+                </th>
+                <th (click)="changeSort('number')">
+                    number
+                    <span *ngIf="sortState.column === 'number'">
+                        <button (click)="changeSortOrder()" class="noborder"> {{ sortState.type === 'asc' ? '🔺' : '🔻'
+                            }}</button>
+                    </span>
+                </th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of persons | sort: sortState.type : sortState.column | search: field">
+                <td>{{ person.first }}</td>
+                <td>{{ person.last }}</td>
+                <td>{{ person.phone }}</td>
+                <td>
+                    <button type="button" class="btn editBtn" (click)="editBtn(person)">edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn deleteBtn" (click)="deleteBtn(person)">delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #showAddPhoneTemplate >
+    <!-- <div class="addPhone"> -->
+        <div class="overlay">
+
+     
+        <div class="addPhone "  >
+
+        <div class="topAddPhone">
+            <h2>Add phone</h2>
+            <button type="button" class="btn closeBtn" (click)="toggleTemplates()">✖</button>
+        </div>
+
+        <hr>
+
+        <input type="text" placeholder="first name goes here" class="input" [(ngModel)]="inputFirst" name="firstName"
+            required>
+        <input type="text" placeholder="second name goes here" class="input" [(ngModel)]="inputLast" name="lastName"
+            required>
+        <input type="text" placeholder="number phone goes here" class="input" [(ngModel)]="inputPhone"
+            name="phoneNumber" required>
+
+        <hr>
+        <button type="button" class="btn saveBtn" *ngIf="!showTemplate1" (click)="saveBtn()"
+            [disabled]="isFormInvalid()">save</button>
+    </div>
+</div>
+</ng-template>

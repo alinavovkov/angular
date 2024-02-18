@@ -11,6 +11,9 @@ import { Les02Component } from './les02/les02.component';
 import { AngularTaskListComponent } from './angular-task-list/angular-task-list.component';
 // import { ChildListComponent } from './angularTaskList/child-list/child-list.component';
 import { ChildListComponent } from './angular-task-list/child-list/child-list.component';
+import { PhoneBookComponent } from './phone-book/phone-book.component';
+import { SortPipe } from './phone-book/sort.pipe';
+import { SearchPipe } from './phone-book/search.pipe';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { ChildListComponent } from './angular-task-list/child-list/child-list.co
     Les02Component,
     // Les02TaskComponent,
     AngularTaskListComponent,
-    ChildListComponent
+    ChildListComponent,
+    PhoneBookComponent,
+    SortPipe,
+    SearchPipe
     // ChildListComponent
   ],
   imports: [

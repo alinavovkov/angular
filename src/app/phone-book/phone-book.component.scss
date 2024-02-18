@@ -1,0 +1,162 @@
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$color_green: rgb(11, 121, 10);
+$color_white: rgb(240, 239, 239);
+$color_yellow: #EBAF17ff;
+$color_red: #d90429;
+$color_light_grey: rgb(206, 206, 206);
+$color_blue: rgb(14, 40, 126);
+$color_snow_white: rgb(255, 255, 255);
+$color_dark: rgb(53, 53, 53);
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.container {
+    position: relative;
+}
+
+.btn {
+    height: 38px;
+    border: none;
+    color: $color_white;
+    border-radius: 5px;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid $color_light_grey;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.searchAddArea {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.input {
+    height: 40px;
+    width: 78%;
+    padding: 2px;
+    padding-left: 5px;
+    border: none;
+    outline: 1px solid $color_light_grey;
+    border-radius: 5px;
+}
+
+.addBtn {
+    width: 20%;
+    height: 44px;
+    background: $color_green;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    height: 35px;
+}
+
+td {
+    height: 55px;
+}
+
+th,
+td {
+    border-bottom: 2px solid $color_light_grey;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.editBtn {
+    width: 90%;
+    background: $color_yellow;
+}
+
+.deleteBtn {
+    width: 90%;
+    background: $color_red;
+}
+
+.noborder {
+    border: none;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $color_light_grey;
+    }
+}
+
+
+// add phone
+
+.addPhone {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 300px;
+    color: $color_dark;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: $color_snow_white;
+    border-radius: 10px;
+    padding: 0 20px 20px 20px;
+}
+
+.topAddPhone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addPhone input {
+    width: 90%;
+    margin: 0 auto;
+    outline: 1px $color_light_grey solid;
+}
+
+.saveBtn {
+    background: $color_blue;
+    color: $color_white;
+    width: 60px;
+    margin-left: auto;
+}
+
+.saveBtn:hover {
+    background: $color_white;
+    color: $color_blue;
+    border: 1px solid $color_blue;
+}
+
+.closeBtn {
+    color: $color_dark;
+    font-size: 25px;
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
